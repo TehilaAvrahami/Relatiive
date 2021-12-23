@@ -65,7 +65,7 @@ namespace trial
             //});
 
 
-            //4
+            //4 הוספה
 
             //var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
 
@@ -89,10 +89,9 @@ namespace trial
             //foreach (BsonDocument doc1 in documents)
             //{
             //    Console.WriteLine(doc1.ToString());
-            //}    
+            //}
 
-
-            //5
+            //5 הגבלה
 
             //var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
 
@@ -107,7 +106,7 @@ namespace trial
             //});
 
 
-            //6
+            //6 
             //var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
 
             //IMongoDatabase db = dbClient.GetDatabase("bookstore");
@@ -120,19 +119,8 @@ namespace trial
             //    Console.WriteLine(doc);
             //});
 
-            //7
+            //7 מחיקה
 
-            //var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
-
-            //IMongoDatabase db = dbClient.GetDatabase("bookstore");
-
-            //var books = db.GetCollection<BsonDocument>("Books");
-
-            //var filter = Builders<BsonDocument>.Filter.Eq("Name", "aaaaa");
-
-            //books.DeleteOne(filter);
-
-            //8
             var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
 
             IMongoDatabase db = dbClient.GetDatabase("bookstore");
@@ -140,9 +128,20 @@ namespace trial
             var books = db.GetCollection<BsonDocument>("Books");
 
             var filter = Builders<BsonDocument>.Filter.Eq("Name", "aaaaa");
-            var update = Builders<BsonDocument>.Update.Set("Price", 52000);
 
-            books.UpdateOne(filter, update);
+            books.DeleteOne(filter);
+
+            //8 עדכון
+            //var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
+
+            //IMongoDatabase db = dbClient.GetDatabase("bookstore");
+
+            //var books = db.GetCollection<BsonDocument>("Books");
+
+            //var filter = Builders<BsonDocument>.Filter.Eq("Name", "aaaaa");
+            //var update = Builders<BsonDocument>.Update.Set("Price", 52000);
+
+            //books.UpdateOne(filter, update);
 
 
             Console.ReadLine();
