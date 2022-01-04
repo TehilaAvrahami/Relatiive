@@ -7,31 +7,31 @@ using System.Web.Http;
 
 namespace API.Controllers
 {
-    public class ValuesController : ApiController
+    public class Books : ApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
+        // GET: api/Books
+        public Object Get()
         {
-            return new string[] { "value1", "value2" };
+            return BL.BookManager.GetBooks();
         }
 
-        // GET api/values/5
+        // GET: api/Books/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/values
+        // POST: api/Books
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT api/values/5
+        // PUT: api/Books/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/values/5
+        // DELETE: api/Books/5
         public void Delete(int id)
         {
         }

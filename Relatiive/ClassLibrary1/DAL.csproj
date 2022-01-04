@@ -78,11 +78,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DALClasses\DALBook.cs" />
     <Compile Include="pagesBook\Book.cs" />
     <Compile Include="pagesBook\BookStoreDatabaseSettings.cs" />
     <Compile Include="pagesBook\DalBooks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="pagesBook\DBConection.cs" />
     <Compile Include="System\Data\Entity.cs" />
   </ItemGroup>
   <ItemGroup>
