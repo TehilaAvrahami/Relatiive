@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace FaceDetectionApp
@@ -21,7 +22,27 @@ namespace FaceDetectionApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            using (OpenFileDialog ofd = new OpenFileDialog() { Multiselect = false, Filter = "JPEG|*.jpg" })
+            {
+                if(ofd.ShowDialog() == DialogResult.OK)
+                {
+                    pic.Image = System.Drawing.Image.FromFile(ofd.FileName);
+                    Bitmap bitmap = new Bitmap(pic.Image);
+                    Image<Bgr, byte> grayImage = new Image<Bgr, byte>(bitmap);
+                    Rectangle[] rectangles = cascadeClassifier.DetectMultyScale(grayImage, 1.4, 0);
+                    foreach(Rectangle rectangle in rectangles)
+                    {
+                        using(Graphics graphics = Graphics.FromImage(bitmap))
+                        {
+                            using (Pen pen = new Pen(Color.Red, 1))
+                            {
+                                graphics.DrawRectangle(pen, rectangle);
+                            }
+                        }
+                    }
+                    pic.Image = bitmap;
+                }
+            }
         }
     }
 }
