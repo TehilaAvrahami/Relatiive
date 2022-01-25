@@ -15,6 +15,6 @@ namespace FaceDetectionApp
         internal Rectangle[] DetectMultyScale(Image<Bgr, byte> grayImage, double v1, int v2)
         {
             throw new NotImplementedException();
-        }
+       }
     }
 }
