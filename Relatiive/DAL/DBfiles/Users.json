@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "61f8f95518204ed2a3cfefd3"
+  },
+  "FirstName": "Tehila",
+  "LastName": "Avrahami",
+  "IdUser": "213289754",
+  "Phone": "0548526325",
+  "EmergencyPhone": "0548458065"
+},{
+  "_id": {
+    "$oid": "61f8fb5218204ed2a3cfefd5"
+  },
+  "FirstName": "Tchelet",
+  "LastName": "Moalem",
+  "IdUser": "212558547",
+  "Phone": "0556985858",
+  "EmergencyPhone": "097844857"
+},{
+  "_id": {
+    "$oid": "61f8fc0618204ed2a3cfefd6"
+  },
+  "FirstName": "Shira",
+  "LastName": "Bura",
+  "IdUser": "213285467",
+  "Phone": "0542874691",
+  "EmergencyPhone": "0664472514"
+},{
+  "_id": {
+    "$oid": "61f8fc5218204ed2a3cfefd7"
+  },
+  "FirstName": "Tehila",
+  "LastName": "Tuito",
+  "IdUser": "215427495",
+  "Phone": "0547148544",
+  "EmergencyPhone": "0225417412"
+},{
+  "_id": {
+    "$oid": "61f8fca118204ed2a3cfefd8"
+  },
+  "FirstName": "Rinat",
+  "LastName": "Avital",
+  "IdUser": "215475284",
+  "Phone": "0547481240",
+  "EmergencyPhone": "0647415427"
+},{
+  "_id": {
+    "$oid": "61f8fce618204ed2a3cfefd9"
+  },
+  "FirstName": "Tahel",
+  "LastName": "Levi",
+  "IdUser": "214685247",
+  "Phone": "0491274510",
+  "EmergencyPhone": "0521474152"
+}]
