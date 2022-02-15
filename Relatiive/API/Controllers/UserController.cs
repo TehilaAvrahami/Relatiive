@@ -1,17 +1,18 @@
-﻿using BL;
-using DAL.pagesDB;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using BL;
+using DAL;
+using DAL.DBfiles;
 
 namespace API.Controllers
 {
     public class UserController : ApiController
     {
-        // GET: api/User
+        //GET: api/User
         public List<User> Get()
         {
             return BL.UserManager.GetUsers();
@@ -30,9 +31,17 @@ namespace API.Controllers
 
         [HttpPost]
         [Route("api/User/SignUp")]
-        public void SignUp([FromBody]User user)
+        public User SignUp([FromBody]User user) //הרשמה
         {
-            UserManager.SignUp(user);
+            return UserManager.SignUp(user);
+        }
+
+        [HttpPost]
+        [Route("api/User/SignIn")]
+        public User SignIn([FromBody]User user)  //התחברות
+        {
+            return UserManager.SignIn(user);
+
         }
 
         // PUT: api/User/5
