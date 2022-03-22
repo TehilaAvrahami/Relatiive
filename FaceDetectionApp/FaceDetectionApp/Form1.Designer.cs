@@ -51,6 +51,7 @@
             this.pic.Size = new System.Drawing.Size(586, 426);
             this.pic.TabIndex = 1;
             this.pic.TabStop = false;
+            this.pic.Click += new System.EventHandler(this.pic_Click);
             // 
             // Form1
             // 

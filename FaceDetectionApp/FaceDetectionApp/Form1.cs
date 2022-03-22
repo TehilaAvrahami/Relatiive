@@ -1,4 +1,5 @@
 ﻿using Emgu.CV;
+using Emgu.CV.Structure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,7 @@ namespace FaceDetectionApp
                     pic.Image = System.Drawing.Image.FromFile(ofd.FileName);
                     Bitmap bitmap = new Bitmap(pic.Image);
                     Image<Bgr, byte> grayImage = new Image<Bgr, byte>(bitmap);
-                    Rectangle[] rectangles = cascadeClassifier.DetectMultyScale(grayImage, 1.4, 0);
+                    Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(grayImage, 1.4, 0);
                     foreach(Rectangle rectangle in rectangles)
                     {
                         using(Graphics graphics = Graphics.FromImage(bitmap))
@@ -43,6 +44,11 @@ namespace FaceDetectionApp
                     pic.Image = bitmap;
                 }
             }
+        }
+
+        private void pic_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
