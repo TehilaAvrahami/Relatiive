@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detectFaceHaarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detectFaceLBPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,15 +48,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(699, 510);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -70,21 +61,32 @@
             // oToolStripMenuItem
             // 
             this.oToolStripMenuItem.Name = "oToolStripMenuItem";
-            this.oToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.oToolStripMenuItem.Text = "Open";
             this.oToolStripMenuItem.Click += new System.EventHandler(this.oToolStripMenuItem_Click);
             // 
             // detectFaceHaarToolStripMenuItem
             // 
             this.detectFaceHaarToolStripMenuItem.Name = "detectFaceHaarToolStripMenuItem";
-            this.detectFaceHaarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detectFaceHaarToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.detectFaceHaarToolStripMenuItem.Text = "Detect Face Haar";
+            this.detectFaceHaarToolStripMenuItem.Click += new System.EventHandler(this.detectFaceHaarToolStripMenuItem_Click);
             // 
             // detectFaceLBPToolStripMenuItem
             // 
             this.detectFaceLBPToolStripMenuItem.Name = "detectFaceLBPToolStripMenuItem";
-            this.detectFaceLBPToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detectFaceLBPToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.detectFaceLBPToolStripMenuItem.Text = "Detect Face LBP";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(699, 510);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FormFaceDetction
             // 
