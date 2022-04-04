@@ -14,7 +14,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
     this.signUpForm = new FormGroup(
       {
-        tz: new FormControl(''),
+        firstName: new FormControl(''),
         name: new FormControl(''),
         pass: new FormControl(''),
         nochange: new FormControl(''),
@@ -27,16 +27,6 @@ export class SignUpComponent implements OnInit {
   }
 
 
-  //   <!-- שם משפחה -->
-  //   <!-- גיל  -->
-  //   <!-- תאריך לידה -->
-  //   <!--טלפון -->
-  //   <!-- מייל -->
-  //   <!-- תז -->
-
-  //   <!-- שם משתמש לאתר -->
-  //   <!--סיסמא -->
-  //   <!--אימות סיסמא -->
-  //   <!-- אישור תנאי השימוש -->
-  // 
+  
+   
 }

@@ -1,12 +1,31 @@
-<form [formGroup]="signUpForm">
-    <div class="form-control">
-    <label for="tz">תעודת זהות</label>
-    <input class="form-control" type="text" id="tz" placeholder="">
-    <label for="name">שם פרטי</label>
-    <input class="form-control" type="text" id="name" placeholder="ישראל">
-    <label for="name">שם משפחה</label>
-    <input class="form-control" type="text" id="name" placeholder="ישראלי">
-    <label for="pass">סיסמא</label>
-    <input   class="btn btn-primary" type="submit" value="הרשם">
-</div>
-    </form>
+
+  <div class="container" style="align-items: center; width: 30rem;">
+    <form class="dropdown-menu p-4 row card ">
+        <div class="mb-3">
+            <label class="form-label" id="firstName">First name</label>
+            <input type="text" class="form-control" placeholder="First name">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Last name</label>
+            <input type="text" class="form-control" placeholder="Last name">
+          </div>
+
+        <div class="mb-3">
+          <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Identity</label>
+            <input type="text" class="form-control" placeholder="">
+          </div>
+
+        <div class="mb-3">
+          <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+        </div>
+
+        <button type="submit" class="btn btn-success" style="background-color: rgb(37, 179, 136);border-color:rgb(37, 179, 136);">Sign in</button>
+      </form>
+  </div>

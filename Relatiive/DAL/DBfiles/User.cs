@@ -17,10 +17,14 @@ namespace DAL.DBfiles
 
         public string LastName { get; set; } = null;
 
+        public string Email { get; set; } = null;
+
         public string IdUser { get; set; }
 
         public string Phone { get; set; } = null;
 
         public string EmergencyPhone { get; set; } = null;
+
+        public string Password { get; set; } = null;
     }
 }
