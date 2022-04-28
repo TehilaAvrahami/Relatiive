@@ -31,7 +31,7 @@ namespace EmguCV
                 if(dialog.ShowDialog() == DialogResult.OK)
                 {
                     imgInput = new Image<Bgr, byte>(dialog.FileName);
-                    pictureBox1.Image =imgInput.ToBitmap(300, 510);
+                    pictureBox1.Image =imgInput.ToBitmap();
                     pictureBox1.Show();
                 }
                 else
@@ -58,7 +58,7 @@ namespace EmguCV
                 {
                     imgInput.Draw(face, new Bgr(0, 0, 255), 2);
                 }
-                pictureBox1.Image = imgInput.ToBitmap(300, 510);
+                pictureBox1.Image = imgInput.ToBitmap(300,300);
             }
             catch (Exception ex)
             {

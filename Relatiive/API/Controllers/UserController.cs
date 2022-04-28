@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using BL;
 using DAL;
@@ -42,6 +43,17 @@ namespace API.Controllers
         {
             return UserManager.SignIn(user);
 
+        }
+
+        [HttpPost]
+        [Route("api/User/loadPictures")]
+        public int LoadPictures()
+        {
+            HttpPostedFile file = HttpContext.Current.Request.Files["voters"];
+            string path = HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName);
+            file.SaveAs(path);
+            int electionId = int.Parse(HttpContext.Current.Request.Params["electionId"]);
+            return 7;
         }
 
         // PUT: api/User/5
