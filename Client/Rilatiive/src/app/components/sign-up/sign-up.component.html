@@ -33,17 +33,12 @@
         </div>
 
 
-        <div class="mb-3">
-          <input type="file" class="form-control" aria-label="file example" required>
-          <div class="invalid-feedback">Example invalid form file feedback</div>
-        </div>
-
-        <div class="upload">
-          <label class="span">  טען פרטי בוחרים</label>
+        <div class="upload mb-3">
+          <label class="span">Select an image</label>
           <input type="file" class="up" (change)="upload(fileUpload)" #fileUpload >
         </div>
 
 
-        <button type="submit" class="btn btn-success" style="background-color: rgb(37, 179, 136);border-color:rgb(37, 179, 136);" (click)="addUser()">Sign in</button>
+        <button type="submit" class="btn btn-success mb-3" style="background-color: rgb(37, 179, 136);border-color:rgb(37, 179, 136);" (click)="addUser()">Sign in</button>
       </form>
   </div>
