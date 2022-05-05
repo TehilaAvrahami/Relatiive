@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SignUp } from '../model/signUp';
+import { SignUp } from '../model/SignUp';
 import { Observable } from 'rxjs/internal/Observable';
 import { SignIn } from '../model/SignIn';
 

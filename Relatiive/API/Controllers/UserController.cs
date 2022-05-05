@@ -49,10 +49,12 @@ namespace API.Controllers
         [Route("api/User/loadPictures")]
         public int LoadPictures()
         {
-            HttpPostedFile file = HttpContext.Current.Request.Files["voters"];
+            HttpPostedFile file = HttpContext.Current.Request.Files[0];
             string path = HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName);
             file.SaveAs(path);
+            Console.WriteLine("path\n"+path);
             int electionId = int.Parse(HttpContext.Current.Request.Params["electionId"]);
+            Console.ReadLine();
             return 7;
         }
 
