@@ -30,7 +30,10 @@ namespace EmguCV
                 OpenFileDialog dialog = new OpenFileDialog();
                 if(dialog.ShowDialog() == DialogResult.OK)
                 {
+                    MessageBox.Show("dialog.FileName"+ dialog.FileName);
                     imgInput = new Image<Bgr, byte>(dialog.FileName);
+                    MessageBox.Show("imgInput" + imgInput);
+
                     pictureBox1.Image =imgInput.ToBitmap();
                     pictureBox1.Show();
                 }
