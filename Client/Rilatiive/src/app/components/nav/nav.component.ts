@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-blue ="assets/color.png"
+
   constructor() { }
 
   ngOnInit(): void {

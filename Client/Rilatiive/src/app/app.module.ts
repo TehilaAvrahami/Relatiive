@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
 import { UserComponent } from './components/user/user.component';
 import { RealTimeComponent } from './components/real-time/real-time.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { RealTimeComponent } from './components/real-time/real-time.component';
     NavComponent,
     UserComponent,
     RealTimeComponent,
+    AboutComponent,
     
   ],
   imports: [
