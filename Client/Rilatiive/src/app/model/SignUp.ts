@@ -1,8 +1,8 @@
 export interface SignUp{
-FirstName:Text;
-LastName:Text;
-IdUser:Text;
-Email:Text;
-Phone:Text;
-Password:Text;
+FirstName:String;
+LastName:String;
+IdUser:String;
+Email:String;
+Phone:String;
+Password:String;
 }

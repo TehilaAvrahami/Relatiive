@@ -5,13 +5,13 @@ import { SignUp } from 'src/app/model/SignUp';
 
 @Component({
   selector: 'app-sign-up',
-  templateUrl:'./sign-up.component.html',
+  templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
 
   signUpForm: any;
-  constructor(private db:DbService) { }
+  constructor(private db: DbService) { }
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup(
@@ -26,9 +26,7 @@ export class SignUpComponent implements OnInit {
     )
   }
 
-  
   addUser() {
-    console.log(this.signUpForm);
     const signUp: SignUp = {
       FirstName: this.signUpForm.controls.firstName.value,
       LastName: this.signUpForm.controls.lastName.value,
@@ -37,7 +35,6 @@ export class SignUpComponent implements OnInit {
       Phone: this.signUpForm.controls.phone.value,
       Password: this.signUpForm.controls.pass.value
     }
-    console.log(signUp);
     this.db.addUser(signUp).subscribe(res => {
       console.log(res)
 
@@ -50,13 +47,13 @@ export class SignUpComponent implements OnInit {
 
   }
 
-  upload(fileInput:any) {
-  
-   this.db.uploadFile(fileInput.files[0], this.signUpForm.controls.id.value).subscribe();
+  upload(fileInput: any) {
+
+    this.db.uploadFile(fileInput.files[0], this.signUpForm.controls.id.value).subscribe();
     console.log("הבוחרים נטענו בהצלחה")
-    
+
   }
 }
-  
-   
+
+
 

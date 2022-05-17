@@ -4,39 +4,39 @@
     <form [formGroup]="signUpForm" class="dropdown-menu p-4 row card fs-6">
         <div class="mb-3">
             <label class="form-label">First name</label>
-            <input type="text" class="form-control" id="firstName">
+            <input type="text" formControlName="firstName" class="form-control" id="firstName">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Last name</label>
-            <input type="text" class="form-control" id="lastName">
+            <input type="text" formControlName="lastName" class="form-control" id="lastName">
           </div>
 
         <div class="mb-3">
             <label class="form-label">Identity</label>
-            <input type="text" class="form-control" id="id">
+            <input type="text" formControlName="id" class="form-control" id="id">
           </div>
 
         <div class="mb-3">
           <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="mail">
+          <input type="email" formControlName="mail" class="form-control" id="mail">
         </div>
 
         <div class="mb-3">
           <label class="form-label" id="firstName">Phones</label>
-          <input type="tel" class="form-control" id="phone">
+          <input type="tel" formControlName="phone" class="form-control" id="phone">
         </div>
 
         <div class="mb-3">
           <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
-          <input type="password" class="form-control" id="pass">
+          <input type="password" formControlName="pass" class="form-control" id="pass">
         </div>
 
-
+<!-- 
         <div class="upload mb-3">
           <label class="span form-label">Select an image</label>
           <input type="file" class="up" (change)="upload(fileUpload)" #fileUpload >
-        </div>
+        </div> -->
 
 
         <button type="submit" class="btn btn-success mb-3" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);" (click)="addUser()">Sign in</button>
