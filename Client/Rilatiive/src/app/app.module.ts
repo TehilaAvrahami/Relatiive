@@ -11,6 +11,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { UserComponent } from './components/user/user.component';
 import { RealTimeComponent } from './components/real-time/real-time.component';
 import { AboutComponent } from './components/about/about.component';
+import { ContactUsFormComponent } from './components/contact-us-form/contact-us-form.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { AboutComponent } from './components/about/about.component';
     UserComponent,
     RealTimeComponent,
     AboutComponent,
+    ContactUsFormComponent,
     
   ],
   imports: [

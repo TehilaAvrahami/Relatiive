@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  imageLogo="assets/big2.png"
+  imageLogo="assets/logo2.png"
   // imageApp="assets/image.png"
   im1 ="assets/1.jpg"
   im2 ="assets/2.jpg"
