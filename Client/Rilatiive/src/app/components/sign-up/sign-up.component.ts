@@ -11,6 +11,9 @@ import { SignUp } from 'src/app/model/SignUp';
 export class SignUpComponent implements OnInit {
 
   signUpForm: any;
+
+  fileToUpload: File | null = null
+
   constructor(private db: DbService) { }
 
   ngOnInit(): void {
@@ -25,7 +28,9 @@ export class SignUpComponent implements OnInit {
       }
     )
   }
-
+  selectFile(event:any) {
+    this.fileToUpload = event.target.files[0];
+}
   addUser() {
     const signUp: SignUp = {
       FirstName: this.signUpForm.controls.firstName.value,

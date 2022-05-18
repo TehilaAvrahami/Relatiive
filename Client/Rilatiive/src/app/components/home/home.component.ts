@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +14,10 @@ export class HomeComponent implements OnInit {
   im3 ="assets/3.jpg"
   im4 ="assets/4.jpg"
 
-  constructor() { }
-
+  constructor(private route:Router) { }
+  routeToAbout(){
+this.route.navigate(['About'])
+  }
   ngOnInit(): void {
   }
 

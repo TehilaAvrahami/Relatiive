@@ -1,4 +1,7 @@
-<h3 class="text-center" style="margin-top:10%">Contact us form</h3>
+
+  <!-- <img [src]="small"> -->
+
+<h3 class="text-center">Contact us form</h3>
 <div class="container" style="align-items: center; width: 30rem;">
     <form class="dropdown-menu p-4 row card ">
         <div class="mb-3">
@@ -9,6 +12,14 @@
           <label for="exampleDropdownFormPassword2" class="form-label">Contact phone</label>
           <input type="password" class="form-control" id="">
         </div>
+
+        <input type="file" (change)="selectFile($event)" accept="image/*" class="btn" id="pic" style="margin: 10px;" />
+
+        <!-- צריך לבדוק אם העלו תמונה -->
+        <p *ngIf="fileToUpload==null">❌No image uploaded</p>
+        <p *ngIf="fileToUpload!=null">✔Image uploaded successfully
+        </p>
+    
         <button type="submit" class="btn btn-success" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);">Save</button>
       </form>
   </div>
