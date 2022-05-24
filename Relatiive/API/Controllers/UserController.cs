@@ -19,17 +19,6 @@ namespace API.Controllers
             return BL.UserManager.GetUsers();
         }
 
-        // GET: api/User/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/User
-        public void Post([FromBody]string value)
-        {
-        }
-
         [HttpPost]
         [Route("api/User/SignUp")]
         public User SignUp([FromBody]User user) //הרשמה
@@ -37,12 +26,11 @@ namespace API.Controllers
             return UserManager.SignUp(user);
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("api/User/SignIn")]
         public User SignIn([FromBody]User user)  //התחברות
         {
             return UserManager.SignIn(user);
-
         }
 
         [HttpPost]
@@ -56,6 +44,13 @@ namespace API.Controllers
             int electionId = int.Parse(HttpContext.Current.Request.Params["electionId"]);
             Console.ReadLine();
             return 7;
+        }
+
+        [HttpPost]
+        [Route("api/User/ContactForm")]
+        public Contact ContactForm([FromBody]Contact contact) //יצירת טופס 
+        {
+            return UserManager.ContactForm(contact);
         }
 
         // PUT: api/User/5

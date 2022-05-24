@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBfiles\Contact.cs" />
     <Compile Include="DBfiles\DBSetting.cs" />
     <Compile Include="DBfiles\User.cs" />
     <Compile Include="DBfiles\UserService.cs" />

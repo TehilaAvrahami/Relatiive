@@ -31,5 +31,12 @@ namespace BL
             User user = usersCollection.FirstOrDefault(u => u.Email.Equals(email) && u.Password.Equals(pass));
             return user;
         }
+
+        //הוספת טופס יצירת קשר
+        public static Contact ContactForm(Contact newForm)
+        {
+            return UserService.InsertForm(newForm);
+        }
+
     }
 }

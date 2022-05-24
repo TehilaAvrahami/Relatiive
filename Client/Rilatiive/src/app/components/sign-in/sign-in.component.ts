@@ -30,14 +30,14 @@ export class SignInComponent implements OnInit {
     }
 
     console.log(login);
-    this.db.loginUser(login).subscribe(res => {
-      console.log(res)
+    // this.db.loginUser(login).subscribe(res => {
+    //   console.log(res)
 
-      if (res == null)
-        alert("User does not exist")
-      else
-        alert("Login to the system")
-    })
+    //   if (res == null)
+    //     alert("User does not exist")
+    //   else
+    //     alert("Login to the system")
+    // })
   }
 
 }

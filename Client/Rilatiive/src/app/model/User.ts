@@ -1,10 +1,10 @@
-// export class user{
-//     FirstName?:string;
-//     LastName?:string;
-//     //IdUser:string;
-//     Email?:string;
-//     Phone?:string;
-//     Password?:string;
+export class User {
+    IdUser?:string;
+    FirstName?: string;
+    LastName?: string;
+    Email?: string;
+    Phone?: string;
+    Password?: string;
 
-//     constructor(){}
-//     }
+    constructor() { }
+}

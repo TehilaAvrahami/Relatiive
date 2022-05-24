@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DbService } from 'src/app/services/db.service';
 import { SignUp } from 'src/app/model/SignUp';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,7 +15,7 @@ export class SignUpComponent implements OnInit {
 
   fileToUpload: File | null = null
 
-  constructor(private db: DbService) { }
+  constructor(private db: DbService, private router: Router) { }
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup(
@@ -28,9 +29,9 @@ export class SignUpComponent implements OnInit {
       }
     )
   }
-  selectFile(event:any) {
+  selectFile(event: any) {
     this.fileToUpload = event.target.files[0];
-}
+  }
   addUser() {
     const signUp: SignUp = {
       FirstName: this.signUpForm.controls.firstName.value,
@@ -44,10 +45,12 @@ export class SignUpComponent implements OnInit {
       console.log(res)
 
       if (res == null)
-        alert("Server Routing")
-      else
+        alert("Server error")
+      else {
         alert("Added successfully")
+      }
     })
+    this.router.navigate(['Contact'])
 
 
   }
@@ -55,7 +58,7 @@ export class SignUpComponent implements OnInit {
   upload(fileInput: any) {
 
     this.db.uploadFile(fileInput.files[0], this.signUpForm.controls.id.value).subscribe();
-    console.log("הבוחרים נטענו בהצלחה")
+    // console.log("הבוחרים נטענו בהצלחה")
 
   }
 }

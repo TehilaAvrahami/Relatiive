@@ -21,7 +21,7 @@ namespace DAL.DBfiles
         {
             var dbClient = new DBSetting();
             var users = dbClient.Db.GetCollection<BsonDocument>("Users");
-            b.IdUser = ObjectId.GenerateNewId().ToString();
+            //b._id = objectid.generatenewid().tostring();
             var doc = b.ToBsonDocument();
 
             users.InsertOne(doc);
@@ -45,6 +45,17 @@ namespace DAL.DBfiles
 
             users.DeleteOne(filter);
 
+        }
+
+        public static Contact InsertForm(Contact c)
+        {
+            var dbform = new DBSetting();
+            var form = dbform.Db.GetCollection<BsonDocument>("Forms");
+            //b._id = objectid.generatenewid().tostring();
+            var doc = c.ToBsonDocument();
+
+            form.InsertOne(doc);
+            return c;
         }
     }
 }
