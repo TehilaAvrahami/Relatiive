@@ -25,10 +25,10 @@ namespace BL
         //התחברות
         public static User SignIn(User oldUser)
         {
-            string FirstName = oldUser.FirstName;
-            string IdUser = oldUser.IdUser;
+            string email = oldUser.Email;
+            string pass = oldUser.Password;
             List<User> usersCollection = UserService.GetCollection();
-            User user = usersCollection.FirstOrDefault(u => u.FirstName.Equals(FirstName) && u.IdUser.Equals(IdUser));
+            User user = usersCollection.FirstOrDefault(u => u.Email.Equals(email) && u.Password.Equals(pass));
             return user;
         }
     }

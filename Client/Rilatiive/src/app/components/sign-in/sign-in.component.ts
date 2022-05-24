@@ -29,14 +29,14 @@ export class SignInComponent implements OnInit {
       Password: this.signInForm.controls.pass.value
     }
 
-    console.log();
+    console.log(login);
     this.db.loginUser(login).subscribe(res => {
       console.log(res)
 
       if (res == null)
-        alert("Server Routing")
+        alert("User does not exist")
       else
-        alert("Added successfully")
+        alert("Login to the system")
     })
   }
 

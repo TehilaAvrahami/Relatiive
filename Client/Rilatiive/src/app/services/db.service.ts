@@ -20,6 +20,7 @@ export class DbService {
     return this.http.post<SignIn>("https://localhost:44307/api/User/SignIn", login)
   }
 
+
   public uploadFile(voters: File, electionId: number): Observable<Object> {
     let formData = new FormData();
     formData.append('voters', voters);

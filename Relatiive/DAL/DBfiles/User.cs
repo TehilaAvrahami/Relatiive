@@ -11,7 +11,7 @@ namespace DAL.DBfiles
     public class User
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        //[BsonRepresentation(BsonType.ObjectId)]
 
         public string FirstName { get; set; } = null;
 
