@@ -13,13 +13,13 @@
           <input formControlName="phone" class="form-control" id="phone">
         </div>
 
-        <!-- <input type="file" formControlName="img" (change)="selectFile($event)" accept="image/*" class="btn" id="img" style="margin: 10px;" />
+  <input type="file" formControlName="img" (change)="selectFile($event)" accept="image/*" class="btn" id="img" style="margin: 10px;" />
 
-         צריך לבדוק אם העלו תמונה -->
-        <!-- <p *ngIf="fileToUpload==null">❌No image uploaded</p>
+  <img *ngIf="fileToUpload!=null" [src]="mysrc" >
+         <!-- צריך לבדוק אם העלו תמונה -->
+        <p *ngIf="fileToUpload==null">❌No image uploaded</p>
         <p *ngIf="fileToUpload!=null">✔Image uploaded successfully
-        </p>  -->
-    
+        </p>  
         <button type="submit" class="btn btn-success" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);" (click)="addForm()">Save</button>
       </form>
   </div>
