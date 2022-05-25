@@ -3,7 +3,7 @@
   <Class Name="API.Controllers.UserController">
     <Position X="11.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAACABAAAAIAAAACAEAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAACAAAAACABAAAAIAAAAEAEAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Controllers\UserController.cs</FileName>
     </TypeIdentifier>
   </Class>
