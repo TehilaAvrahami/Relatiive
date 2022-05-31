@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from 'src/app/services/db.service';
 
 @Component({
   selector: 'app-private-area',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivateAreaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public db:DbService) { }
 
   ngOnInit(): void {
   }

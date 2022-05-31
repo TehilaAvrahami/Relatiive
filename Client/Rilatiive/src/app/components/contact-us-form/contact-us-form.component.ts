@@ -51,7 +51,9 @@ export class ContactUsFormComponent implements OnInit {
       Mail: this.contactForm.controls.mail.value,
       ContactPhone: this.contactForm.controls.phone.value,
       image: this.contactForm.controls.img.value,
+      userId: this.db.user.IdUser
     }
+    
     this.db.addForm(contact).subscribe(res => {
       console.log(res)
 

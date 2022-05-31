@@ -34,11 +34,11 @@ export class SignInComponent implements OnInit {
     console.log(login);
     this.db.loginUser(login).subscribe(res => {
       console.log(res)
-
       if (res == null)
         alert("User does not exist")
-      else{
+      else {
         alert("Login to the system")
+        this.db.user = res
         this.router.navigate(['Area'])
       }
     })

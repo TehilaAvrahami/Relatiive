@@ -12,15 +12,16 @@ import { Contact } from '../model/Contact';
 export class DbService {
 
   user: User = new User()
+  
   constructor(private http: HttpClient) { }
   //sign-up
-  addUser(newUser: SignUp): Observable<SignUp> {
-    return this.http.post<SignUp>("https://localhost:44307/api/User/SignUp", newUser)
+  addUser(newUser: SignUp): Observable<User> {
+    return this.http.post<User>("https://localhost:44307/api/User/SignUp", newUser)
   }
 
   //LOGIN
-  loginUser(login: SignIn): Observable<SignIn> {
-     return this.http.post<SignIn>("https://localhost:44307/api/User/SignIn", login)
+  loginUser(login: SignIn): Observable<User> {
+     return this.http.post<User>("https://localhost:44307/api/User/SignIn", login)
   } 
 
   //contact form

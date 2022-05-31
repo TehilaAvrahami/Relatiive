@@ -14,7 +14,7 @@ namespace DAL.DBfiles
         public string Mail { get; set; } = null;
         public string ContactPhone { get; set; } = null;
         public string image { get; set; } = null;
-
+        public string userId { get; set; } = null;
 
     }
 }

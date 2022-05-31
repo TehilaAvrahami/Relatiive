@@ -50,7 +50,7 @@ namespace DAL.DBfiles
         public static Contact InsertForm(Contact c)
         {
             var dbform = new DBSetting();
-            var form = dbform.Db.GetCollection<BsonDocument>("Forms");
+            var form = dbform.Db.GetCollection<BsonDocument>("Contacts");
             //b._id = objectid.generatenewid().tostring();
             var doc = c.ToBsonDocument();
 
