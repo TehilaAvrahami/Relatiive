@@ -36,7 +36,7 @@ export class SignUpComponent implements OnInit {
     const signUp: SignUp = {
       FirstName: this.signUpForm.controls.firstName.value,
       LastName: this.signUpForm.controls.lastName.value,
-      IdUser: this.signUpForm.controls.id.value,
+      Id: this.signUpForm.controls.id.value,
       Email: this.signUpForm.controls.mail.value,
       Phone: this.signUpForm.controls.phone.value,
       Password: this.signUpForm.controls.pass.value

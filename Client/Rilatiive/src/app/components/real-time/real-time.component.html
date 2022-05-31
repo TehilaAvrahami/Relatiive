@@ -3,6 +3,7 @@
     <form class="dropdown-menu p-4 row card ">
         <input type="file" (change)="selectFile($event)" accept="image/*" class="btn" id="pic" style="margin: 10px;" /> 
 
+        <img *ngIf="fileToUpload!=null" [src]="mysrc">
         <!-- צריך לבדוק אם העלו תמונה -->
         <p *ngIf="fileToUpload==null">❌No image uploaded</p>
         <p *ngIf="fileToUpload!=null">✔Image uploaded successfully

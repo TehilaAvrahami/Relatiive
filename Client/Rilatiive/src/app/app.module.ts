@@ -13,6 +13,7 @@ import { RealTimeComponent } from './components/real-time/real-time.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactUsFormComponent } from './components/contact-us-form/contact-us-form.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PrivateAreaComponent } from './components/private-area/private-area.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AboutComponent,
     ContactUsFormComponent,
     FooterComponent,
+    PrivateAreaComponent,
     
   ],
   imports: [

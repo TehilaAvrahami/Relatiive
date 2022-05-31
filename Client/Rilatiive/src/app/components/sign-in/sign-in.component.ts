@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SignIn } from 'src/app/model/SignIn';
 import { DbService } from 'src/app/services/db.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -10,7 +12,7 @@ import { DbService } from 'src/app/services/db.service';
 })
 export class SignInComponent implements OnInit {
   signInForm: any;
-  constructor(private db: DbService) { }
+  constructor(private db: DbService, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -30,14 +32,17 @@ export class SignInComponent implements OnInit {
     }
 
     console.log(login);
-    // this.db.loginUser(login).subscribe(res => {
-    //   console.log(res)
+    this.db.loginUser(login).subscribe(res => {
+      console.log(res)
 
-    //   if (res == null)
-    //     alert("User does not exist")
-    //   else
-    //     alert("Login to the system")
-    // })
+      if (res == null)
+        alert("User does not exist")
+      else{
+        alert("Login to the system")
+        this.router.navigate(['Area'])
+      }
+    })
+
   }
 
 }

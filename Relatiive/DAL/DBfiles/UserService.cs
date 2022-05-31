@@ -14,16 +14,16 @@ namespace DAL.DBfiles
         {
             var dbClient = new DBSetting();
             var usersCollection = dbClient.Db.GetCollection<User>("Users");
-            List<User> documents = IMongoCollectionExtensions.Find<User>(usersCollection, u => u.FirstName.Contains("ch")).ToList();
+            List<User> documents = IMongoCollectionExtensions.Find<User>(usersCollection, u => true).ToList();
             return documents;
         }
         public static User Insert(User b)
         {
             var dbClient = new DBSetting();
             var users = dbClient.Db.GetCollection<BsonDocument>("Users");
-            //b._id = objectid.generatenewid().tostring();
+            b.IdUser = ObjectId.GenerateNewId().ToString();
             var doc = b.ToBsonDocument();
-
+          
             users.InsertOne(doc);
             return b;
         }

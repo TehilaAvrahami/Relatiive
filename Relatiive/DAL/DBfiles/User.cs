@@ -8,14 +8,16 @@ using System.Threading.Tasks;
 
 namespace DAL.DBfiles
 {
+    [BsonIgnoreExtraElements]
+
     public class User
     {
         [BsonId]
-        //[BsonRepresentation(BsonType.ObjectId)]
-
-        public string _id { get; set; } = null;
+        [BsonRepresentation(BsonType.ObjectId)]
 
         public string IdUser { get; set; } = null;
+
+        public string Id { get; set; } = null;
 
         public string FirstName { get; set; } = null;
 

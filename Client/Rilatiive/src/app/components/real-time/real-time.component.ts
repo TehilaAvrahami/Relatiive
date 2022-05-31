@@ -8,13 +8,24 @@ import { Component, OnInit } from '@angular/core';
 export class RealTimeComponent implements OnInit {
   fileToUpload: File | null = null
 
-
+  mysrc:any
   constructor() { }
 
   ngOnInit(): void {
   }
-  selectFile(event:any) {
-    this.fileToUpload = event.target.files[0];
+  
+selectFile(event: any) {
+
+  console.log(event);
+
+  this.fileToUpload = event.target.files[0];
+ 
+  var reader = new FileReader();
+  reader.readAsDataURL(event.target.files[0]);
+  
+  reader.onload = (_event) => {
+    this.mysrc = reader.result; 
+  }
 }
 
 

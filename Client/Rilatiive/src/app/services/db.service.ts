@@ -19,10 +19,9 @@ export class DbService {
   }
 
   //LOGIN
-  // loginUser(login: SignIn): Observable<SignIn> {
-  //   // return this.http.get<SignIn>("https://localhost:44307/api/User/SignIn", login)
-  // } 
-  loginUser() { }
+  loginUser(login: SignIn): Observable<SignIn> {
+     return this.http.post<SignIn>("https://localhost:44307/api/User/SignIn", login)
+  } 
 
   //contact form
   addForm(newForm:Contact): Observable<Contact>{

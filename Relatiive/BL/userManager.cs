@@ -7,6 +7,7 @@ using DAL.DBfiles;
 
 namespace BL
 {
+
     public class UserManager
     {
         //שימוש במחלקה עם אנוטיישן של מונגו

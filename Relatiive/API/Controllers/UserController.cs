@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using BL;
 using DAL;
 using DAL.DBfiles;
@@ -26,7 +27,7 @@ namespace API.Controllers
             return UserManager.SignUp(user);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("api/User/SignIn")]
         public User SignIn([FromBody]User user)  //התחברות
         {
