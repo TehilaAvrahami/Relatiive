@@ -35,9 +35,9 @@ export class SignInComponent implements OnInit {
     this.db.loginUser(login).subscribe(res => {
       console.log(res)
       if (res == null)
-        alert("User does not exist")
+        alert("Incorrect ID number or password!")
       else {
-        alert("Login to the system")
+        alert("Login Successfully!")
         this.db.user = res
         this.router.navigate(['Area'])
       }
