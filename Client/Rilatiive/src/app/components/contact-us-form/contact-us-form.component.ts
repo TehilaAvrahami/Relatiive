@@ -29,23 +29,8 @@ export class ContactUsFormComponent implements OnInit {
         img: new FormControl(''),
       }
     )
-
-  }
-  selectFile(event: any) {
-
-    console.log(event);
-
-    this.fileToUpload = event.target.files[0];
-   
-    var reader = new FileReader();
-		reader.readAsDataURL(event.target.files[0]);
-		
-		reader.onload = (_event) => {
-			this.mysrc = reader.result; 
-		}
   }
 
-  
   addForm() {
     const contact: Contact = {
       Mail: this.contactForm.controls.mail.value,
@@ -63,7 +48,23 @@ export class ContactUsFormComponent implements OnInit {
         alert("Form successfully created")
       }
     })
-    // this.router.navigate(['Contact'])
-
+     //this.router.navigate(['Area'])
   }
+
+  selectFile(event: any) {
+
+    console.log(event);
+
+    this.fileToUpload = event.target.files[0];
+   
+    var reader = new FileReader();
+		reader.readAsDataURL(event.target.files[0]);
+		
+		reader.onload = (_event) => {
+			this.mysrc = reader.result; 
+		}
+  }
+
+  
+  
 }

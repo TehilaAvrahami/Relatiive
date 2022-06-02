@@ -29,9 +29,7 @@ export class SignUpComponent implements OnInit {
       }
     )
   }
-  selectFile(event: any) {
-    this.fileToUpload = event.target.files[0];
-  }
+ 
   addUser() {
     const signUp: SignUp = {
       FirstName: this.signUpForm.controls.firstName.value,
@@ -51,8 +49,6 @@ export class SignUpComponent implements OnInit {
       }
     })
     this.router.navigate(['Contact'])
-
-
   }
 
   upload(fileInput: any) {

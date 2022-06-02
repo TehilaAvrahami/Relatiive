@@ -35,7 +35,7 @@ export class SignInComponent implements OnInit {
     this.db.loginUser(login).subscribe(res => {
       console.log(res)
       if (res == null)
-        alert("Incorrect ID number or password!")
+        alert("Incorrect mail number or password!")
       else {
         alert("Login Successfully!")
         this.db.user = res
