@@ -13,7 +13,7 @@
           <input formControlName="phone" class="form-control" id="phone">
         </div>
 
-  <input type="file" formControlName="img" (change)="selectFile($event)" accept="image/*" class="btn" id="img" style="margin: 10px;" />
+  <input type="file"  formControlName="img" (change)="selectFile($event)" accept="image/*" class="btn" id="img" style="margin: 10px;" />
 
   <img *ngIf="fileToUpload!=null" [src]="mysrc">
          <!-- צריך לבדוק אם העלו תמונה -->

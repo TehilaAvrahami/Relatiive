@@ -34,25 +34,25 @@ namespace API.Controllers
             return UserManager.SignIn(user);
         }
 
-        [HttpPost]
-        [Route("api/User/loadPictures")]
-        public int LoadPictures()
-        {
-            HttpPostedFile file = HttpContext.Current.Request.Files[0];
-            string path = HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName);
-            file.SaveAs(path);
-            Console.WriteLine("path\n"+path);
-            int electionId = int.Parse(HttpContext.Current.Request.Params["electionId"]);
-            Console.ReadLine();
-            return 7;
-        }
+        //[HttpPost]
+        //[Route("api/User/loadPictures")]
+        //public int LoadPictures()
+        //{
+        //    HttpPostedFile file = HttpContext.Current.Request.Files[0];
+        //    string path = HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName);
+        //    file.SaveAs(path);
+        //    Console.WriteLine("path\n"+path);
+        //    int electionId = int.Parse(HttpContext.Current.Request.Params["electionId"]);
+        //    Console.ReadLine();
+        //    return 7;
+        //}
 
-        [HttpPost]
-        [Route("api/User/ContactForm")]
-        public Contact ContactForm([FromBody]Contact contact) //יצירת טופס 
-        {
-            return UserManager.ContactForm(contact);
-        }
+        //[HttpPost]
+        //[Route("api/User/Contact")]
+        //public Contact ContactForm([FromBody]Contact contact) //יצירת טופס 
+        //{
+        //    return UserManager.ContactForm(contact);
+        //}
 
         // PUT: api/User/5
         public void Put(int id, [FromBody]string value)

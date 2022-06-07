@@ -26,15 +26,31 @@ export class DbService {
 
   //contact form
   addForm(newForm:Contact): Observable<Contact>{
-    return this.http.post<Contact>("https://localhost:44307/api/User/Contact", newForm)
+    return this.http.post<Contact>("https://localhost:44307/api/Contact/Contact", newForm)
   }
 
 
-  public uploadFile(voters: File, electionId: number): Observable<Object> {
-    let formData = new FormData();
-    formData.append('voters', voters);
-    formData.append('electionId', electionId.toString());
-    return this.http.post(`https://localhost:44307/api/User/loadPictures`, formData);
+   //שליחת תמונה
+   upload(file: any): Observable<string> {
+
+    // Create form data
+    const formData = new FormData();
+
+    // Store form name as "file" with file data
+    formData.append('file', file);
+
+    // Make http post request over api
+    // with formData as req
+    return this.http.post<string>("https://localhost:44307/api/File/upload", formData);
   }
+
+
+
+  // public uploadFile(voters: File, electionId: number): Observable<Object> {
+  //   let formData = new FormData();
+  //   formData.append('voters', voters);
+  //   formData.append('electionId', electionId.toString());
+  //   return this.http.post(`https://localhost:44307/api/User/loadPictures`, formData);
+  // }
 }
 

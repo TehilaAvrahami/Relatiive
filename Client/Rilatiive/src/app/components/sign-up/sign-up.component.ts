@@ -51,12 +51,8 @@ export class SignUpComponent implements OnInit {
     this.router.navigate(['Contact'])
   }
 
-  upload(fileInput: any) {
-
-    this.db.uploadFile(fileInput.files[0], this.signUpForm.controls.id.value).subscribe();
-    // console.log("הבוחרים נטענו בהצלחה")
-
-  }
+  
+  
 }
 
 

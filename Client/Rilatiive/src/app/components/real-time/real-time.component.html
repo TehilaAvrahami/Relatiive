@@ -12,6 +12,6 @@
         <p *ngIf="fileToUpload!=null">✔Image uploaded successfully
         </p>
     
-        <button type="submit" class="btn btn-success" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);">Search</button>
+        <button type="submit" (click)="uploadFile()" class="btn btn-success" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);">Search</button>
       </form>
   </div> 
