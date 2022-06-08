@@ -41,6 +41,9 @@ export class ContactUsFormComponent implements OnInit {
     
     this.db.addForm(contact).subscribe(res => {
       console.log(res)
+      if(this.db.user.IdUser == null)
+        alert("Invalid login")
+
 
       if (res == null)
         alert("Server error")
@@ -48,18 +51,14 @@ export class ContactUsFormComponent implements OnInit {
         alert("Form successfully created")
       }
     })
-     //this.router.navigate(['Area'])
+     this.router.navigate(['Area'])
   }
 
   selectFile(event: any) {
-
     console.log(event);
-
     this.fileToUpload = event.target.files[0];
-   
     var reader = new FileReader();
 		reader.readAsDataURL(event.target.files[0]);
-		
 		reader.onload = (_event) => {
 			this.mysrc = reader.result; 
 		}

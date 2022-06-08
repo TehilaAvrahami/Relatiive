@@ -1,6 +1,7 @@
 <div style="text-align: left; margin-top: -3%;">
     <img src ="assets/l.png">
 </div>  
+<h1 *ngIf="db.user.FirstName==null" class="fs-1 text-center">Hello Guest!</h1>
 <h1 *ngIf="db.user.FirstName!=null" class="fs-1 text-center">Hello {{db.user.FirstName}}!</h1>
 <div style="text-align: center;">
 <button type="button" (click)="routeToContact()" class="btn btn-success shadow p-3 mb-5 rounded" style="margin: 3%; margin-top: 100px; height: 120px; width: 120px; border-color:rgb(63, 180, 153); background-color: rgb(63, 180, 153);">

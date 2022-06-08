@@ -51,7 +51,7 @@ namespace DAL.DBfiles
         {
             var dbform = new DBSetting();
             var form = dbform.Db.GetCollection<BsonDocument>("Contacts");
-            //b._id = objectid.generatenewid().tostring();
+            c.IdUser = ObjectId.GenerateNewId().ToString();
             var doc = c.ToBsonDocument();
 
             form.InsertOne(doc);
