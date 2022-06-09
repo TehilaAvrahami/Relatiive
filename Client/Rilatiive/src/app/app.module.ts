@@ -12,7 +12,6 @@ import { UserComponent } from './components/user/user.component';
 import { RealTimeComponent } from './components/real-time/real-time.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactUsFormComponent } from './components/contact-us-form/contact-us-form.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { PrivateAreaComponent } from './components/private-area/private-area.component';
 
 
@@ -27,7 +26,6 @@ import { PrivateAreaComponent } from './components/private-area/private-area.com
     RealTimeComponent,
     AboutComponent,
     ContactUsFormComponent,
-    FooterComponent,
     PrivateAreaComponent,
     
   ],

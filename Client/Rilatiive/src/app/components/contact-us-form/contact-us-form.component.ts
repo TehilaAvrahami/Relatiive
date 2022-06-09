@@ -11,14 +11,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./contact-us-form.component.css']
 })
 export class ContactUsFormComponent implements OnInit {
-
   contactForm: any;
-
   fileToUpload: File | null = null
-
   small = "assets/small.png"
 
   mysrc:any
+  dbService: any;
   constructor(private db: DbService, private router: Router) { }
 
   ngOnInit(): void {
@@ -32,19 +30,17 @@ export class ContactUsFormComponent implements OnInit {
   }
 
   addForm() {
-    const contact: Contact = {
+      const contact: Contact = {
       Mail: this.contactForm.controls.mail.value,
       ContactPhone: this.contactForm.controls.phone.value,
       image: this.contactForm.controls.img.value,
       userId: this.db.user.IdUser
     }
     
-    this.db.addForm(contact).subscribe(res => {
+    this.db.addform(contact).subscribe(res => {
       console.log(res)
       if(this.db.user.IdUser == null)
         alert("Invalid login")
-
-
       if (res == null)
         alert("Server error")
       else {
@@ -54,6 +50,7 @@ export class ContactUsFormComponent implements OnInit {
      this.router.navigate(['Area'])
   }
 
+  
   selectFile(event: any) {
     console.log(event);
     this.fileToUpload = event.target.files[0];
@@ -63,7 +60,5 @@ export class ContactUsFormComponent implements OnInit {
 			this.mysrc = reader.result; 
 		}
   }
-
-  
   
 }

@@ -25,10 +25,16 @@ export class DbService {
   } 
 
   //contact form
-  addForm(newForm:Contact): Observable<Contact>{
+  addform(newForm:Contact): Observable<Contact>{
+    // uploadFile()
     return this.http.post<Contact>("https://localhost:44307/api/Contact/Contact", newForm)
   }
 
+
+  // //update
+  // update(newUser: SignUp): Observable<User> {
+  //   return this.http.post<User>("https://localhost:44307/api/User/SignUp", newUser)
+  // }
 
    //שליחת תמונה
    upload(file: any): Observable<string> {
@@ -52,5 +58,9 @@ export class DbService {
   //   formData.append('electionId', electionId.toString());
   //   return this.http.post(`https://localhost:44307/api/User/loadPictures`, formData);
   // }
+}
+
+function uploadFile() {
+  throw new Error('Function not implemented.');
 }
 

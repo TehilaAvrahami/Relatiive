@@ -39,5 +39,11 @@ namespace BL
             return UserService.InsertForm(newForm);
         }
 
+        //עדכון
+        //public static User UpdateUser(User user)
+        //{
+        //    string id = user.Id;
+        //    return UserService.Update(id, user);
+        //}
     }
 }

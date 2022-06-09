@@ -31,7 +31,7 @@ namespace API.Controllers
                 HttpPostedFile file = HttpContext.Current.Request.Files[0];
                 string path = HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName);
                 file.SaveAs(path);
-                Image image = Image.FromFile("~/Content/Files/" + file.FileName);
+                Image image = Image.FromFile(System.Web.HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName));
                 return "ok";
 
 

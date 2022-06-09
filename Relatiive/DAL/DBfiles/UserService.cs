@@ -35,6 +35,7 @@ namespace DAL.DBfiles
             var update = b.ToBsonDocument();
             users.ReplaceOne(filter, update);
         }
+
         public static void Delete(string id)
         {
             var dbClient = new DBSetting();
