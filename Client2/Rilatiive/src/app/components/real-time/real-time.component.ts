@@ -16,7 +16,7 @@ export class RealTimeComponent implements OnInit {
   }
 
   selectFile(event: any) {
-
+   
     console.log(event);
 
     this.fileToUpload = event.target.files[0];
