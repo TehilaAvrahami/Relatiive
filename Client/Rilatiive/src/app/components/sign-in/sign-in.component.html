@@ -12,6 +12,6 @@
           <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
           <input type="password" class="form-control" formControlName="pass" id="pass">
         </div>
-        <button type="submit" class="btn btn-success" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);" (click)="doLogin()">Sign in</button>
+        <button type="submit" [disabled]="!signInForm.valid" class="btn btn-success" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);" (click)="doLogin()">Sign in</button>
       </form>
   </div>

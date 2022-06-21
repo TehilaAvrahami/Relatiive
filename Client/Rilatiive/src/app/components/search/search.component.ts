@@ -11,18 +11,21 @@ export class SearchComponent implements OnInit {
   flag: boolean = false
 
   constructor(public dbService: DbService) { }
-
   ngOnInit(): void {
-    this.dbService.search("").subscribe(
-      res => {
-        this.flag = true
-        this.dbService.foundId = res;
-
-      },
-      err => {
-        console.log("error:" + err.message);
-      }
-    )
+    throw new Error('Method not implemented.');
   }
+
+  // ngOnInit(): void {
+  //   this.dbService.search("").subscribe(
+  //     res => {
+  //       this.flag = true
+  //       this.dbService.foundId = res;
+
+  //     },
+  //     err => {
+  //       console.log("error:" + err.message);
+  //     }
+  //   )
+  // }
 
 }

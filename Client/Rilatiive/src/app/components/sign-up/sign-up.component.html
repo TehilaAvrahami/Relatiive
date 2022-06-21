@@ -35,6 +35,6 @@
           <input type="password" formControlName="pass" class="form-control" id="pass">
         </div>
        
-        <button type="submit" class="btn btn-success mb-3" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);" (click)="addUser()">Sign in</button>
+        <button type="submit" [disabled]="!signUpForm.valid" class="btn btn-success mb-3" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);" (click)="addUser()">Sign up</button>
       </form>
   </div>

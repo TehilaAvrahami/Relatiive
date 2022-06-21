@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SignIn } from 'src/app/model/SignIn';
 import { DbService } from 'src/app/services/db.service';
 import { Router } from '@angular/router';
@@ -18,8 +18,8 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {
     this.signInForm = new FormGroup(
       {
-        mail: new FormControl(''),
-        pass: new FormControl(''),
+        mail: new FormControl('', [Validators.required, Validators.email]),
+        pass: new FormControl('', [Validators.required]),
       }
     )
   }

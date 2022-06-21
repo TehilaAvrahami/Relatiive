@@ -65,8 +65,7 @@ function uploadFile() {
   throw new Error('Function not implemented.');
 }
 
-function search(path: string): Observable<string> {
-  // return "213289754";
-  return this.http.post<string>(`https://localhost:44307/api/Search/GetUser/${path}`);
-
-}
+// function search(path: string): Observable<string> {
+//   // return "213289754";
+//   return this.http.post<string>(`https://localhost:44307/api/Search/GetUser/${path}`);
+// }

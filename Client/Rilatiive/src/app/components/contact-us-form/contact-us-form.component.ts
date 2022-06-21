@@ -25,7 +25,7 @@ export class ContactUsFormComponent implements OnInit {
       {
         mail: new FormControl('', [Validators.required, Validators.email]),
         phone: new FormControl('', [Validators.required]),
-        img: new FormControl(''),
+        img: new FormControl('', [Validators.required]),
       }
     )
   }
