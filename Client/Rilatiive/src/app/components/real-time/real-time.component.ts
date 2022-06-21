@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DbService } from 'src/app/services/db.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class RealTimeComponent implements OnInit {
   fileToUpload: File | null = null
 
   mysrc: any
-  constructor(public dbService: DbService) { }
+  constructor(public dbService: DbService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -31,12 +32,16 @@ export class RealTimeComponent implements OnInit {
 
   loading: boolean = false; // Flag variable
   shortLink: string = "";
+
   uploadFile() {
     this.loading = !this.loading;
     console.log("*********************" + this.fileToUpload);
     this.dbService.upload(this.fileToUpload).subscribe(
 
-      res => { console.log(res) }
+      res => {
+        console.log(res);
+        this.router.navigate(['Search'])
+      }
     );
   }
 

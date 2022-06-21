@@ -12,7 +12,8 @@ import { Contact } from '../model/Contact';
 export class DbService {
 
   user: User = new User()
-  
+  foundId: string | undefined
+
   constructor(private http: HttpClient) { }
   //sign-up
   addUser(newUser: SignUp): Observable<User> {
@@ -21,11 +22,11 @@ export class DbService {
 
   //LOGIN
   loginUser(login: SignIn): Observable<User> {
-     return this.http.post<User>("https://localhost:44307/api/User/SignIn", login)
-  } 
+    return this.http.post<User>("https://localhost:44307/api/User/SignIn", login)
+  }
 
   //contact form
-  addform(newForm:Contact): Observable<Contact>{
+  addform(newForm: Contact): Observable<Contact> {
     // uploadFile()
     return this.http.post<Contact>("https://localhost:44307/api/Contact/Contact", newForm)
   }
@@ -36,8 +37,8 @@ export class DbService {
   //   return this.http.post<User>("https://localhost:44307/api/User/SignUp", newUser)
   // }
 
-   //שליחת תמונה
-   upload(file: any): Observable<string> {
+  //שליחת תמונה
+  upload(file: any): Observable<string> {
 
     // Create form data
     const formData = new FormData();
@@ -64,3 +65,8 @@ function uploadFile() {
   throw new Error('Function not implemented.');
 }
 
+function search(path: string): Observable<string> {
+  // return "213289754";
+  return this.http.post<string>(`https://localhost:44307/api/Search/GetUser/${path}`);
+
+}

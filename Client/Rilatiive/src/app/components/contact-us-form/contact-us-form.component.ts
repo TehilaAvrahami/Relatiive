@@ -14,32 +14,45 @@ export class ContactUsFormComponent implements OnInit {
   contactForm: any;
   fileToUpload: File | null = null
   small = "assets/small.png"
+  control = new FormControl();
 
-  mysrc:any
+  mysrc: any
   dbService: any;
-  constructor(private db: DbService, private router: Router) { }
+  constructor(public db: DbService, private router: Router) { }
 
   ngOnInit(): void {
     this.contactForm = new FormGroup(
       {
-        mail: new FormControl(''),
-        phone: new FormControl(''),
+        mail: new FormControl('', [Validators.required, Validators.email]),
+        phone: new FormControl('', [Validators.required]),
         img: new FormControl(''),
       }
     )
   }
 
+
   addForm() {
-      const contact: Contact = {
+    const contact: Contact = {
       Mail: this.contactForm.controls.mail.value,
       ContactPhone: this.contactForm.controls.phone.value,
       image: this.contactForm.controls.img.value,
       userId: this.db.user.IdUser
     }
-    
+
+    //בדיקת תקינות
+
+    // if(!contact.Mail.includes("@") ||!contact.Mail.includes(".")  )
+    // {
+    //   alert("כתובת מייל לא נכונה");
+    // }
+
+
+
+
+    //שליחה לשרת
     this.db.addform(contact).subscribe(res => {
       console.log(res)
-      if(this.db.user.IdUser == null)
+      if (this.db.user.IdUser == null)
         alert("Invalid login")
       if (res == null)
         alert("Server error")
@@ -47,18 +60,18 @@ export class ContactUsFormComponent implements OnInit {
         alert("Form successfully created")
       }
     })
-     this.router.navigate(['Area'])
+    this.router.navigate(['Area'])
   }
 
-  
+
   selectFile(event: any) {
     console.log(event);
     this.fileToUpload = event.target.files[0];
     var reader = new FileReader();
-		reader.readAsDataURL(event.target.files[0]);
-		reader.onload = (_event) => {
-			this.mysrc = reader.result; 
-		}
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = (_event) => {
+      this.mysrc = reader.result;
+    }
   }
-  
+
 }

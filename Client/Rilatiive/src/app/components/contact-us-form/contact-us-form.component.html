@@ -1,25 +1,32 @@
 <div style="text-align: left; margin-top: -3%;">
-  <img src ="assets/l.png">
-</div> 
+  <img src="assets/l.png">
+</div>
 <h3 class="text-center">Contact us form</h3>
 <div class="container" style="align-items: center; width: 30rem;">
-    <form [formGroup]="contactForm" class="dropdown-menu p-4 row card ">
-        <div class="mb-3">
-          <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
-          <input type="email" formControlName="mail" class="form-control" id="mail">
-        </div>
-        <div class="mb-3">
-          <label for="exampleDropdownFormPassword2" class="form-label">Contact phone</label>
-          <input type="phone" formControlName="phone" class="form-control" id="phone">
-        </div>
+  <form [formGroup]="contactForm" (ngSubmit)="addForm()" class="dropdown-menu p-4 row card">
+    <div class="mb-3">
+      <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
+      <input type="email" formControlName="mail" class="form-control" id="mail">
 
-  <input type="file"  formControlName="img" (change)="selectFile($event)" accept="image/*" class="btn" id="img" style="margin: 10px;" />
+      <!-- <div *ngIf="mail.touched || mail.dirty && mail.invalid">
+            <div *ngIf="mail.errors.required">required field</div>
+            <div *ngIf="mail.errors.email">invalid email address</div>
+          </div> -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleDropdownFormPassword2" class="form-label">Contact phone</label>
+      <input type="phone" formControlName="phone" class="form-control" id="phone">
+    </div>
 
-  <img *ngIf="fileToUpload!=null" [src]="mysrc">
-         <!-- צריך לבדוק אם העלו תמונה -->
-        <p *ngIf="fileToUpload==null">❌No image uploaded</p>
-        <p *ngIf="fileToUpload!=null">✔Image uploaded successfully
-        </p>  
-        <button type="submit" class="btn btn-success" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);" (click)="addForm()">Save</button>
-      </form>
-  </div>
+    <input type="file" formControlName="img" (change)="selectFile($event)" accept="image/*" class="btn" id="img"
+      style="margin: 10px;" />
+
+    <img *ngIf="fileToUpload!=null" [src]="mysrc">
+    <!-- צריך לבדוק אם העלו תמונה -->
+    <p *ngIf="fileToUpload==null">❌No image uploaded</p>
+    <p *ngIf="fileToUpload!=null">✔Image uploaded successfully
+    </p>
+    <button type="submit" [disabled]="db.user.IdUser==null || !contactForm.valid" class="btn btn-success"
+      style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);">Save</button>
+  </form>
+</div>

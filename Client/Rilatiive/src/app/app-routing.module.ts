@@ -5,6 +5,7 @@ import { ContactUsFormComponent } from './components/contact-us-form/contact-us-
 import { HomeComponent } from './components/home/home.component';
 import { PrivateAreaComponent } from './components/private-area/private-area.component';
 import { RealTimeComponent } from './components/real-time/real-time.component';
+import { SearchComponent } from './components/search/search.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'Real',component:RealTimeComponent},
   { path: 'Contact',component:ContactUsFormComponent},
   { path: 'Area',component:PrivateAreaComponent},
+  { path: 'Search',component:SearchComponent},
 
 
 

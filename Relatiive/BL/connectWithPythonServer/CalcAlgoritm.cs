@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace BL.connectWithPythonServer
 {
-    class CalcAlgoritm
+    public class CalcAlgoritm
     {
-        public static void start() {
+        public static string start(string path) {
             var url = "http://webcode.me";
 
             var request = WebRequest.Create(url);
@@ -23,6 +23,7 @@ namespace BL.connectWithPythonServer
             var data = reader.ReadToEnd();
 
             Console.WriteLine(data);
+            return "213289754";
         }
     }
 }

@@ -29,7 +29,7 @@ export class SignUpComponent implements OnInit {
       }
     )
   }
- 
+
   addUser() {
     const signUp: SignUp = {
       FirstName: this.signUpForm.controls.firstName.value,
@@ -39,20 +39,22 @@ export class SignUpComponent implements OnInit {
       Phone: this.signUpForm.controls.phone.value,
       Password: this.signUpForm.controls.pass.value
     }
+    
     this.db.addUser(signUp).subscribe(res => {
       console.log(res)
 
       if (res == null)
         alert("Server error")
       else {
+        this.db.user = res
         alert("Added successfully")
       }
     })
     this.router.navigate(['Contact'])
   }
 
-  
-  
+
+
 }
 
 

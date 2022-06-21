@@ -14,6 +14,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactUsFormComponent } from './components/contact-us-form/contact-us-form.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PrivateAreaComponent } from './components/private-area/private-area.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { PrivateAreaComponent } from './components/private-area/private-area.com
     ContactUsFormComponent,
     FooterComponent,
     PrivateAreaComponent,
+    SearchComponent,
     
   ],
   imports: [
