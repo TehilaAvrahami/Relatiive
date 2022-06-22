@@ -12,6 +12,8 @@ import { Contact } from '../model/Contact';
 export class DbService {
 
   user: User = new User()
+  contact: Contact = new Contact()
+
   foundId: string | undefined
 
   constructor(private http: HttpClient) { }
@@ -52,7 +54,10 @@ export class DbService {
   }
 
 
-
+  search(): Observable<Contact> {
+    return this.http.get<Contact>("https://localhost:44307/api/Search/GetUserId");
+  }
+  
   // public uploadFile(voters: File, electionId: number): Observable<Object> {
   //   let formData = new FormData();
   //   formData.append('voters', voters);
@@ -65,7 +70,5 @@ function uploadFile() {
   throw new Error('Function not implemented.');
 }
 
-// function search(path: string): Observable<string> {
-//   // return "213289754";
-//   return this.http.post<string>(`https://localhost:44307/api/Search/GetUser/${path}`);
-// }
+
+

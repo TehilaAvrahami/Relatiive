@@ -17,6 +17,15 @@ namespace DAL.DBfiles
             List<User> documents = IMongoCollectionExtensions.Find<User>(usersCollection, u => true).ToList();
             return documents;
         }
+
+        public static List<Contact> GetContact(string id)
+        {
+            var dbClient = new DBSetting();
+            var contactCollection = dbClient.Db.GetCollection<Contact>("Contacts");
+            List<Contact> documents = IMongoCollectionExtensions.Find(contactCollection, c => c.IdUser == id).ToList();
+            return documents;
+        }
+
         public static User Insert(User b)
         {
             var dbClient = new DBSetting();
@@ -27,6 +36,7 @@ namespace DAL.DBfiles
             users.InsertOne(doc);
             return b;
         }
+
         public static void Update(string id, User b)
         {
             var dbClient = new DBSetting();

@@ -15,7 +15,7 @@ namespace API.Controllers
     public class ContactController : ApiController
     {
         [HttpPost]
-        [Route("api/Contact/Contact")]
+        [Route("api/Contact/ContactForm")]
         public Contact ContactForm([FromBody]Contact contact) //יצירת טופס 
         {
             return UserManager.ContactForm(contact);
@@ -26,16 +26,17 @@ namespace API.Controllers
         {
             [Route("upload")]
             [HttpPost]
-            public string uploadFile()
+            public static string uploadFile()
             {
                 HttpPostedFile file = HttpContext.Current.Request.Files[0];
                 string path = HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName);
                 file.SaveAs(path);
                 Image image = Image.FromFile(System.Web.HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName));
-                return "ok";
-
+                return path;
 
             }
+
         }
     }
 }
+

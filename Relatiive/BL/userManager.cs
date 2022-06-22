@@ -39,6 +39,12 @@ namespace BL
             return UserService.InsertForm(newForm);
         }
 
+        //החזרת טופס יצירת קשר
+        public static List<Contact> RturnForm(string id)
+        {
+            return UserService.GetContact(id);
+        }
+
         //עדכון
         //public static User UpdateUser(User user)
         //{

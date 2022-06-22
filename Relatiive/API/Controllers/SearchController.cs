@@ -5,20 +5,28 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using BL.connectWithPythonServer;
+using DAL.DBfiles;
 
 namespace API.Controllers
 {
-    [RoutePrefix("api/Search/")]
+    //[RoutePrefix("api/Search")]
     public class SearchController : ApiController
     {
         [HttpPost]
-        [Route("GetUser/{path}")]
+        [Route("api/Search")]
         // GET: api/Search
-        public string GetUserId(string path)
-        {
-            return CalcAlgoritm.start(path);
-        }
+        //public static string GetPath()
+        //{
+        //    string path = ContactController.uploadFile();
+        //   return CalcAlgoritm.start(path);
+        //}
 
+        //[HttpPost]
+        //[Route("api/Search/GetUserId")]
+        //public static List<Contact> GetUserId()
+        //{
+        //   return BL.UserManager.RturnForm(GetPath());
+        //}
 
         // POST: api/Search
         public void Post([FromBody]string value)

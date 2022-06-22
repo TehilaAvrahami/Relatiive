@@ -36,13 +36,11 @@ export class RealTimeComponent implements OnInit {
   uploadFile() {
     this.loading = !this.loading;
     console.log("*********************" + this.fileToUpload);
-    this.dbService.upload(this.fileToUpload).subscribe(
-
-      res => {
+    this.dbService.upload(this.fileToUpload).subscribe(res => {
         console.log(res);
-        this.router.navigate(['Search'])
-      }
-    );
+      });
+      // this.router.navigate(['Search'])
+
   }
 
 }
