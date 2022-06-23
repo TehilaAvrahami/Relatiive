@@ -36,7 +36,7 @@ export class RealTimeComponent implements OnInit {
   uploadFile() {
     this.loading = !this.loading;
     console.log("*********************" + this.fileToUpload);
-    this.dbService.upload(this.fileToUpload).subscribe(res => {
+    this.dbService.uploadToServer(this.fileToUpload).subscribe(res => {
         console.log(res);
         this.dbService.search(res).subscribe(r=>{
           console.log(r);

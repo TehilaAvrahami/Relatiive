@@ -27,13 +27,13 @@ namespace API.Controllers
         {
             [Route("upload")]
             [HttpPost]
-            public Task uploadFile()
+            public string uploadFile()
             {
                 HttpPostedFile file = HttpContext.Current.Request.Files[0];
                 string path = HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName);
                 file.SaveAs(path);
                 Image image = Image.FromFile(System.Web.HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName));
-                return BL.connectWithPythonServer.AiClient.startAsync(path);
+                return "ok";
             }
         }
 

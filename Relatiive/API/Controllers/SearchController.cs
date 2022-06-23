@@ -12,14 +12,6 @@ namespace API.Controllers
     //[RoutePrefix("api/Search")]
     public class SearchController : ApiController
     {
-        //[HttpPost]
-        //[Route("api/Search")]
-        // GET: api/Search
-        //public static string GetPath()
-        //{
-        //    string path = ContactController.uploadFile();
-        //   return CalcAlgoritm.start(path);
-        //}
 
         [HttpPost]
         [Route("api/Search/GetUserId")]

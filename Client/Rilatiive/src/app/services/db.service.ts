@@ -43,24 +43,36 @@ export class DbService {
 
   //שליחת תמונה
   upload(file: any): Observable<string> {
-
     // Create form data
     const formData = new FormData();
-
     // Store form name as "file" with file data
     formData.append('file', file);
-
     // Make http post request over api
     // with formData as req
     return this.http.post<string>("https://localhost:44307/api/File/upload", formData);
   }
 
+  //שליחה לשרת בפייתון
+  uploadToServer(file: any): Observable<string> {
+    // Create form data
+    const formData = new FormData();
+    // Store form name as "file" with file data
+    formData.append('file', file);
+    // Make http post request over api
+    // with formData as req
+    const res = this.http.post<string>(" https://dlearning.co.il/detect", formData);
+    console.log(res)
+    return res
+  }
+
 //שליחת מס זהות לשרת
 contact?: Contact = new Contact()
 
-  search(id:any): Observable<Contact> {
-    return this.http.post<Contact>("https://localhost:44307/api/Search/GetUserId",id);
-    
+  search(data:any): Observable<Contact> {
+    if(data && data.predict){
+      return this.http.post<Contact>("https://localhost:44307/api/Search/GetUserId",data.predict);
+    }
+    return data.status
   }
   
   // public uploadFile(voters: File, electionId: number): Observable<Object> {
