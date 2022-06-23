@@ -12,8 +12,8 @@ namespace API.Controllers
     //[RoutePrefix("api/Search")]
     public class SearchController : ApiController
     {
-        [HttpPost]
-        [Route("api/Search")]
+        //[HttpPost]
+        //[Route("api/Search")]
         // GET: api/Search
         //public static string GetPath()
         //{
@@ -21,12 +21,12 @@ namespace API.Controllers
         //   return CalcAlgoritm.start(path);
         //}
 
-        //[HttpPost]
-        //[Route("api/Search/GetUserId")]
-        //public static List<Contact> GetUserId()
-        //{
-        //   return BL.UserManager.RturnForm(GetPath());
-        //}
+        [HttpPost]
+        [Route("api/Search/GetUserId")]
+        public static List<Contact> GetUserId(string id)
+        {
+            return BL.UserManager.RturnForm(id);
+        }
 
         // POST: api/Search
         public void Post([FromBody]string value)

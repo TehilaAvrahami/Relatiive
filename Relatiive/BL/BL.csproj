@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="connectWithPythonServer\CalcAlgoritm.cs" />
-    <Compile Include="connectWithPythonServer\HttpClient.cs" />
+    <Compile Include="connectWithPythonServer\AiClient.cs" />
     <Compile Include="FaceDetect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserManager.cs" />

@@ -12,7 +12,9 @@ import { Contact } from '../model/Contact';
 export class DbService {
 
   user: User = new User()
-  contact: Contact = new Contact()
+  
+
+  result: any;
 
   foundId: string | undefined
 
@@ -53,9 +55,12 @@ export class DbService {
     return this.http.post<string>("https://localhost:44307/api/File/upload", formData);
   }
 
+//שליחת מס זהות לשרת
+contact?: Contact = new Contact()
 
-  search(): Observable<Contact> {
-    return this.http.get<Contact>("https://localhost:44307/api/Search/GetUserId");
+  search(id:any): Observable<Contact> {
+    return this.http.post<Contact>("https://localhost:44307/api/Search/GetUserId",id);
+    
   }
   
   // public uploadFile(voters: File, electionId: number): Observable<Object> {

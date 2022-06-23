@@ -33,9 +33,15 @@ namespace API.Controllers
                 string path = HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName);
                 file.SaveAs(path);
                 Image image = Image.FromFile(System.Web.HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName));
-                return BL.connectWithPythonServer.HttpClient.startAsync(path);
+                return BL.connectWithPythonServer.AiClient.startAsync(path);
             }
+        }
 
+        [HttpPost]
+        [Route("api/Contact/ContactForm")]
+        public Contact returnId([FromBody]Contact contact) //יצירת טופס 
+        {
+            return UserManager.ContactForm(contact);
         }
     }
 }

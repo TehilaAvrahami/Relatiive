@@ -3,8 +3,8 @@
 </div> 
 <h6 class="text-center fs-6">Join Relatiive</h6>
 <h1 class="fs-1 text-center">Create your account</h1>
-  <div class="container" style="align-items: center; width: 30rem;">
-    <form [formGroup]="signUpForm" class="dropdown-menu p-4 row card fs-6">
+  <div class="container" style="align-items: center; width: 25rem;">
+    <form [formGroup]="signUpForm" class="dropdown-menu p-1 row card fs-6">
         <div class="mb-3">
             <label class="form-label">First name</label>
             <input type="text" formControlName="firstName" class="form-control" id="firstName">
@@ -35,6 +35,6 @@
           <input type="password" formControlName="pass" class="form-control" id="pass">
         </div>
        
-        <button type="submit" [disabled]="!signUpForm.valid" class="btn btn-success mb-3" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);" (click)="addUser()">Sign up</button>
+        <button type="submit" [disabled]="!signUpForm.valid" class="btn btn-success mb-2" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);" (click)="addUser()">Sign up</button>
       </form>
   </div>
