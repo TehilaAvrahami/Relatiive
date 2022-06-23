@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace API.Controllers
 {
@@ -26,14 +27,13 @@ namespace API.Controllers
         {
             [Route("upload")]
             [HttpPost]
-            public static string uploadFile()
+            public Task uploadFile()
             {
                 HttpPostedFile file = HttpContext.Current.Request.Files[0];
                 string path = HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName);
                 file.SaveAs(path);
                 Image image = Image.FromFile(System.Web.HttpContext.Current.Server.MapPath("~/Content/Files/" + file.FileName));
-                return path;
-
+                return BL.connectWithPythonServer.HttpClient.startAsync(path);
             }
 
         }
