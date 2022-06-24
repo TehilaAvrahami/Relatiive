@@ -11,7 +11,7 @@ import { DbService } from 'src/app/services/db.service';
 export class RealTimeComponent implements OnInit {
   fileToUpload: File | null = null
   form?: Contact = this.dbService.contact;
-  flag: any
+  flag: boolean = false
   mysrc: any
   constructor(public dbService: DbService, private router: Router) { }
 
@@ -39,15 +39,17 @@ export class RealTimeComponent implements OnInit {
     this.loading = !this.loading;
     console.log("*********************" + this.fileToUpload);
     this.dbService.uploadToServer(this.fileToUpload).subscribe(res => {
+      console.log(res);
+      this.flag = true
+      this.dbService.search(res).subscribe(res => {
         console.log(res);
-        this.flag = false
-        this.dbService.search(res).subscribe(res => {
-          this.flag = true
-          console.log(res);
-          this.dbService.contact=res;
-        })
+        this.dbService.contact = res;
+        this.router.navigate(['Search'])
+      })
+    },
+      err => {
+        console.log("error:" + err.message);
       });
-      this.router.navigate(['Search'])
 
 
   }

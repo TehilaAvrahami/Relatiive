@@ -18,8 +18,8 @@ export class DbService {
 
   foundId: string | undefined
 
-  constructor(private http: HttpClient) { }
-  //sign-up
+ constructor(private http: HttpClient) { }
+  //sign-up)
   addUser(newUser: SignUp): Observable<User> {
     return this.http.post<User>("https://localhost:44307/api/User/SignUp", newUser)
   }
@@ -60,9 +60,7 @@ export class DbService {
     formData.append('file', file);
     // Make http post request over api
     // with formData as req
-    const res = this.http.post<string>(" https://dlearning.co.il/detect", formData);
-    console.log(res)
-    return res
+    return this.http.post<string>(" https://dlearning.co.il/detect", formData);
   }
 
 //שליחת מס זהות לשרת
@@ -83,9 +81,9 @@ contact?: Contact = new Contact()
   // }
 }
 
-function uploadFile() {
-  throw new Error('Function not implemented.');
-}
+// function uploadFile() {
+//   throw new Error('Function not implemented.');
+// }
 
 
 
