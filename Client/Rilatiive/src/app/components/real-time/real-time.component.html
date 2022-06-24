@@ -1,6 +1,7 @@
 <div style="text-align: left; margin-top: -3%;">
     <img src ="assets/l.png">
 </div> 
+<div *ngIf="!this.flag">
 <h3 class="text-center">Please upload a missing image</h3>
 <div class="container" style="align-items: center; width: 30rem;">
     <form class="dropdown-menu p-4 row card ">
@@ -15,3 +16,5 @@
         <button type="submit" (click)="uploadFile()" class="btn btn-success" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);">Search</button>
       </form>
   </div> 
+</div>
+

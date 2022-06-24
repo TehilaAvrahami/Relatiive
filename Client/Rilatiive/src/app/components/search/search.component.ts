@@ -17,15 +17,7 @@ export class SearchComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    // this.dbService.search().subscribe(
-    //   res => {
-    //     this.flag = true
-    //     this.form = this.dbService.contact;
-    //   },
-    //   err => {
-    //     console.log("error:" + err.message);
-    //   }
-    // )
+    console.log(this.form)
   }
 
 }

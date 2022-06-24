@@ -13,7 +13,7 @@ namespace API.Controllers
     public class SearchController : ApiController
     {
 
-        [HttpPost]
+        [HttpGet]
         [Route("api/Search/GetUserId")]
         public static List<Contact> GetUserId(string id)
         {
