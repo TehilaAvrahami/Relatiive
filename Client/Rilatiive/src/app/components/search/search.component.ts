@@ -9,15 +9,47 @@ import { DbService } from 'src/app/services/db.service';
 })
 export class SearchComponent implements OnInit {
 
-  flag: boolean = false
-  form?: Contact = this.dbService.contact;
+  contact: boolean = false
+  // form?: Contact = this.dbService.contact;
   constructor(public dbService: DbService) { }
   // ngOnInit(): void {
   //   throw new Error('Method not implemented.');
   // }
 
+  timeLeft: number = 60;
+  interval: any;
+
   ngOnInit(): void {
-    console.log(this.form)
+    // console.log(this.form)
+    console.log("oninit search component");
+
+    // this.dbService.search().subscribe(
+
+    //   data => {
+    //     this.contact = true
+    //     console.log("data:" + data);
+    //     this.dbService.contact = data
+    //   },
+    //   err => {
+    //     console.log("error:" + err.message);
+    //   }
+    // )
+
+
+
+    // startTimer() {
+    //     this.interval = setInterval(() => {
+    //       if(this.timeLeft > 0) {
+    //         this.timeLeft--;
+    //       } else {
+    //         this.timeLeft = 60;
+    //       }
+    //     },1000)
+    //   }
+
+    //   pauseTimer() {
+    //     clearInterval(this.interval);
+    //   }
   }
 
 }

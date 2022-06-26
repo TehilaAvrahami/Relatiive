@@ -4,6 +4,7 @@ import { SignUp } from '../model/SignUp';
 import { Observable } from 'rxjs/internal/Observable';
 import { SignIn } from '../model/SignIn';
 import { User } from '../model/User';
+import { UploadImg } from '../model/UploadImg';
 import { Contact } from '../model/Contact';
 
 @Injectable({
@@ -12,13 +13,13 @@ import { Contact } from '../model/Contact';
 export class DbService {
 
   user: User = new User()
-  
+  uploadImg: UploadImg = new UploadImg()
 
   result: any;
 
-  foundId: string | undefined
+  found: any
 
- constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
   //sign-up)
   addUser(newUser: SignUp): Observable<User> {
     return this.http.post<User>("https://localhost:44307/api/User/SignUp", newUser)
@@ -53,26 +54,27 @@ export class DbService {
   }
 
   //שליחה לשרת בפייתון
-  uploadToServer(file: any): Observable<string> {
+  uploadToServer(file: any): Observable<UploadImg> {
     // Create form data
     const formData = new FormData();
     // Store form name as "file" with file data
     formData.append('file', file);
     // Make http post request over api
     // with formData as req
-    return this.http.post<string>(" https://dlearning.co.il/detect", formData);
+    return this.http.post<Object>("https://dlearning.co.il/detect", formData);
   }
 
-//שליחת מס זהות לשרת
-contact?: Contact = new Contact()
+  //שליחת מס זהות לשרת
+  contact?: Array<Contact> = new Array<Contact>()
 
-  search(data:any): Observable<Contact> {
-    if(data && data.predict){
-      return this.http.post<Contact>("https://localhost:44307/api/Search/GetUserId",data.predict);
-    }
-    return data.status
+  search(): Observable<Array<Contact>> {
+    console.log("search!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    console.log("predict:" + this.found.predict);
+    console.log(typeof(this.found.predict));
+    
+    return this.http.post<Array<Contact>>("https://localhost:44307/api/Search/GetUserId", this.found.predict)
   }
-  
+
   // public uploadFile(voters: File, electionId: number): Observable<Object> {
   //   let formData = new FormData();
   //   formData.append('voters', voters);

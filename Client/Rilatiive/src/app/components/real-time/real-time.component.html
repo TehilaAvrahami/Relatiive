@@ -1,28 +1,24 @@
 <div style="text-align: left; margin-top: -3%;">
-    <img src ="assets/l.png">
-</div> 
-<div *ngIf="!flag">
-<h3 class="text-center">Please upload a missing image</h3>
-<div class="container" style="align-items: center; width: 30rem;">
+  <img src="assets/l.png">
+</div>
+<div *ngIf="contact==false">
+  <h3 class="text-center">Please upload a missing image</h3>
+  <div class="container" style="align-items: center; width: 30rem;">
     <form class="dropdown-menu p-4 row card ">
-        <input type="file" (change)="selectFile($event)" accept="image/*" class="btn" id="pic" style="margin: 10px;" /> 
+      <input type="file" (change)="selectFile($event)" accept="image/*" class="btn" id="pic" style="margin: 10px;" />
 
-        <img *ngIf="fileToUpload!=null" [src]="mysrc">
-        <!-- צריך לבדוק אם העלו תמונה -->
-        <p *ngIf="fileToUpload==null">❌No image uploaded</p>
-        <p *ngIf="fileToUpload!=null">✔Image uploaded successfully
-        </p>
-    
-        <button type="submit" (click)="uploadFile()" class="btn btn-success" style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);">Search</button>
-      </form>
-  </div> 
+      <img *ngIf="fileToUpload!=null" [src]="mysrc">
+      <!-- צריך לבדוק אם העלו תמונה -->
+      <p *ngIf="fileToUpload==null">❌No image uploaded</p>
+      <p *ngIf="fileToUpload!=null">✔Image uploaded successfully
+      </p>
+
+      <p (click)="uploadFile()" class="btn btn-success"
+        style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);">Search</p>
+    </form>
+  </div>
 </div>
 
-<div *ngIf="flag">
-    <div class="d-flex justify-content-center" style="margin-top: 10%; color: rgb(63, 180, 153);">
-      <div class="spinner-border" role="status">
-        <!-- <div>Search is done please wait...</div> -->
-      </div>
-    </div>
-    <h1 class="fs-1 text-center m-xl-5" style="color: rgb(63, 180, 153);">Search is done please wait...</h1>
-  </div>
+<div *ngIf="contact">
+  <h1>{{dbService.found.predict}}</h1>
+</div>

@@ -13,9 +13,9 @@ namespace API.Controllers
     public class SearchController : ApiController
     {
 
-        [HttpGet]
+        [HttpPost]
         [Route("api/Search/GetUserId")]
-        public static List<Contact> GetUserId(string id)
+        public static List<Contact> GetUserId([FromBody] string id)
         {
             return BL.UserManager.RturnForm(id);
         }

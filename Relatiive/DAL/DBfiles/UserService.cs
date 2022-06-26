@@ -22,7 +22,7 @@ namespace DAL.DBfiles
         {
             var dbClient = new DBSetting();
             var contactCollection = dbClient.Db.GetCollection<Contact>("Contacts");
-            List<Contact> documents = IMongoCollectionExtensions.Find(contactCollection, c => c.IdUser == id).ToList();
+            List<Contact> documents = IMongoCollectionExtensions.Find(contactCollection, c => c.IdUser.Equals(id)).ToList();
             return documents;
         }
 
@@ -62,7 +62,7 @@ namespace DAL.DBfiles
         {
             var dbform = new DBSetting();
             var form = dbform.Db.GetCollection<BsonDocument>("Contacts");
-            c.IdUser = ObjectId.GenerateNewId().ToString();
+            c.userId = ObjectId.GenerateNewId().ToString();
             var doc = c.ToBsonDocument();
 
             form.InsertOne(doc);

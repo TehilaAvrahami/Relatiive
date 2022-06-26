@@ -10,12 +10,13 @@ import { DbService } from 'src/app/services/db.service';
 })
 export class RealTimeComponent implements OnInit {
   fileToUpload: File | null = null
-  form?: Contact = this.dbService.contact;
-  flag: boolean = false
+  form?: Array<Contact> = new Array<Contact>()
+  contact: boolean = false
   mysrc: any
   constructor(public dbService: DbService, private router: Router) { }
 
   ngOnInit(): void {
+    this.form = this.dbService.contact;
   }
 
   selectFile(event: any) {
@@ -37,19 +38,29 @@ export class RealTimeComponent implements OnInit {
 
   uploadFile() {
     this.loading = !this.loading;
-    console.log("*********************" + this.fileToUpload);
     this.dbService.uploadToServer(this.fileToUpload).subscribe(res => {
-      console.log(res);
-      this.flag = true
-      this.dbService.search(res).subscribe(res => {
-        console.log(res);
-        this.dbService.contact = res;
-        this.router.navigate(['Search'])
-      })
-    },
-      err => {
-        console.log("error:" + err.message);
-      });
+      if (res == null)
+        console.log("Server error")
+      else {
+        this.dbService.found = res
+        this.contact = true
+      }
+      // 
+      //   this.dbService.search().subscribe(
+      //     res => {
+      //       console.log("res:" + res);
+      //       this.dbService.contact = res;
+      //       this.contact = true
+      //       // this.router.navigate(['Search'])
+      //     },
+      //     err => {
+      //       console.log("error:" + err.message)
+      //     })
+      // },
+      //   err => {
+      //     console.log("error:" + err.message);
+      //   }
+  })
 
 
   }

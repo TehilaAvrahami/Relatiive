@@ -15,11 +15,11 @@ namespace DAL.DBfiles
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
 
+        public string userId { get; set; } = null;
         public string IdUser { get; set; } = null;
         public string Mail { get; set; } = null;
         public string ContactPhone { get; set; } = null;
         public string image { get; set; } = null;
-        public string userId { get; set; } = null;
 
     }
 }
