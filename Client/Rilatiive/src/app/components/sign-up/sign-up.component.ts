@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class SignUpComponent implements OnInit {
 
   signUpForm: any;
+  mysrc: any
 
   fileToUpload: File | null = null
 
@@ -26,6 +27,7 @@ export class SignUpComponent implements OnInit {
         mail: new FormControl('', [Validators.required, Validators.email]),
         phone: new FormControl('', [Validators.required]),
         pass: new FormControl('', [Validators.required]),
+        img: new FormControl('', [Validators.required]),
       }
     )
   }
@@ -37,6 +39,7 @@ export class SignUpComponent implements OnInit {
       Id: this.signUpForm.controls.id.value,
       Email: this.signUpForm.controls.mail.value,
       Phone: this.signUpForm.controls.phone.value,
+      image: this.signUpForm.controls.img.value,
       Password: this.signUpForm.controls.pass.value
     }
     
@@ -54,6 +57,15 @@ export class SignUpComponent implements OnInit {
   }
 
 
+  selectFile(event: any) {
+    console.log(event);
+    this.fileToUpload = event.target.files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = (_event) => {
+      this.mysrc = reader.result;
+    }
+  }
 
 }
 

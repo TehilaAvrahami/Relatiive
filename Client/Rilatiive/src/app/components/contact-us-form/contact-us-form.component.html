@@ -7,25 +7,18 @@
     <div class="mb-3">
       <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
       <input type="email" formControlName="mail" class="form-control" id="mail">
+<br>
+      <div class="mb-3">
+        <label for="exampleDropdownFormPassword2" class="form-label">Contact phone</label>
+        <input type="phone" formControlName="phone" class="form-control" id="phone">
+      </div>
 
       <!-- <div *ngIf="mail.touched || mail.dirty && mail.invalid">
             <div *ngIf="mail.errors.required">required field</div>
             <div *ngIf="mail.errors.email">invalid email address</div>
           </div> -->
     </div>
-    <div class="mb-3">
-      <label for="exampleDropdownFormPassword2" class="form-label">Contact phone</label>
-      <input type="phone" formControlName="phone" class="form-control" id="phone">
-    </div>
-
-    <input type="file" formControlName="img" (change)="selectFile($event)" accept="image/*" class="btn" id="img"
-      style="margin: 10px;" />
-
-    <img *ngIf="fileToUpload!=null" [src]="mysrc">
-    <!-- צריך לבדוק אם העלו תמונה -->
-    <p *ngIf="fileToUpload==null">❌No image uploaded</p>
-    <p *ngIf="fileToUpload!=null">✔Image uploaded successfully
-    </p>
+    
     <button type="submit" [disabled]="db.user.IdUser==null || !contactForm.valid" class="btn btn-success"
       style="background-color: rgb(63, 180, 153);border-color:rgb(63, 180, 153);">Save</button>
   </form>

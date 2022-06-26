@@ -5,4 +5,5 @@ export interface SignUp {
     Email: string;
     Phone: string;
     Password: string;
+    image:string;
 }

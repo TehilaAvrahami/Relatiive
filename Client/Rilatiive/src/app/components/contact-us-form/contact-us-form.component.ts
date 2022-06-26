@@ -16,7 +16,6 @@ export class ContactUsFormComponent implements OnInit {
   small = "assets/small.png"
   control = new FormControl();
 
-  mysrc: any
   dbService: any;
   constructor(public db: DbService, private router: Router) { }
 
@@ -25,7 +24,6 @@ export class ContactUsFormComponent implements OnInit {
       {
         mail: new FormControl('', [Validators.required, Validators.email]),
         phone: new FormControl('', [Validators.required]),
-        img: new FormControl('', [Validators.required]),
       }
     )
   }
@@ -35,7 +33,6 @@ export class ContactUsFormComponent implements OnInit {
     const contact: Contact = {
       Mail: this.contactForm.controls.mail.value,
       ContactPhone: this.contactForm.controls.phone.value,
-      image: this.contactForm.controls.img.value,
       IdUser: this.db.user.IdUser
     }
 
@@ -64,14 +61,6 @@ export class ContactUsFormComponent implements OnInit {
   }
 
 
-  selectFile(event: any) {
-    console.log(event);
-    this.fileToUpload = event.target.files[0];
-    var reader = new FileReader();
-    reader.readAsDataURL(event.target.files[0]);
-    reader.onload = (_event) => {
-      this.mysrc = reader.result;
-    }
-  }
+  
 
 }
